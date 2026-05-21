@@ -45,7 +45,11 @@ Mapa interativo com 17 blocos de conhecimento para quem quer evoluir na carreira
 
 ## Sobre
 
-Criado por **Fábio Araújo**, Especialista em Qualidade e Professor.
+Criado por **Fábio Araújo**, Especialista em Qualidade, Professor e Mentor.
+Para mentorias em grupo ou individuais, entre em contato: https://mentoria-diganostico.netlify.app/
 
+Redes sociais:
 - [Medium](https://fabiokaia25.medium.com)
 - [GitHub](https://github.com/fabioaraujoqa)
+- [LinkedIn](https://www.linkedin.com/in/fabio10/)
+- [Instagram](https://www.instagram.com/papocomqualidade)
