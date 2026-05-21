@@ -338,7 +338,7 @@ main {
 
 /* PANEL */
 #panel {
-  width: 460px;
+  width: 50%;
   flex-shrink: 0;
   background: var(--surface);
   border-left: 1px solid var(--border);
@@ -492,7 +492,7 @@ main {
 
 /* CONCLUSION PANEL */
 #conclusion {
-  width: 460px;
+  width: 50%;
   flex-shrink: 0;
   background: var(--surface);
   border-left: 1px solid var(--border);
@@ -578,6 +578,44 @@ main {
 
 .fin-cta:hover { background: #a855f7; transform: translateY(-1px); }
 
+.fin-restart {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 24px;
+  background: transparent;
+  border: 1px solid var(--border2);
+  border-radius: 7px;
+  color: var(--muted);
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-bottom: 12px;
+}
+
+.fin-restart:hover { border-color: var(--accent); color: var(--text); }
+
+.fin-share {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 24px;
+  background: transparent;
+  border: 1px solid var(--border2);
+  border-radius: 7px;
+  color: var(--muted);
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-bottom: 8px;
+}
+
+.fin-share:hover { border-color: var(--lilac); color: var(--lilac); }
+
 .fin-by {
   font-family: 'JetBrains Mono', monospace;
   font-size: 10px;
@@ -602,14 +640,14 @@ main {
 }
 
 .nbtn {
-  padding: 8px 18px;
+  padding: 10px 22px;
   border: 1px solid var(--border);
   background: transparent;
   color: var(--muted);
   border-radius: 6px;
   cursor: pointer;
   font-family: 'Inter', sans-serif;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 600;
   transition: all 0.18s;
 }
@@ -622,10 +660,10 @@ main {
 .nbtn:disabled { opacity: 0.2; cursor: not-allowed; pointer-events: none; }
 
 #tbar {
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 600;
   color: var(--text);
-  min-width: 200px;
+  min-width: 240px;
   text-align: center;
 }
 
