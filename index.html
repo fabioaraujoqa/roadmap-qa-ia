@@ -39,6 +39,7 @@
     </div>
    </div>
   <div id="panel" class="hidden">
+    <div class="panel-handle" id="panel-handle"><div class="panel-handle-pill"></div></div>
     <div class="phead">
       <div class="pmeta" id="pmeta">01 / 17</div>
       <div class="ptitle" id="ptitle"></div>
@@ -295,7 +296,7 @@ function buildTrack(){
   tr.appendChild(launchSeg);
 
   D.forEach((d,i)=>{
-    const co=document.createElement('div');co.className='conn';tr.appendChild(co);
+    const co=document.createElement('div');co.className='conn';co.id='conn'+i;tr.appendChild(co);
     const isL=isLilac(i);
     const seg=document.createElement('div');seg.className='seg'+(isL?' lil-seg':'');seg.id='seg'+i;
     seg.onclick=()=>sel(i);
@@ -360,17 +361,22 @@ function sel(i){
   if(i<0||i>=D.length)return;
   cur=i;
   document.querySelectorAll('.seg').forEach(s=>s.classList.remove('active-seg'));
-  document.querySelectorAll('.ndot').forEach((n,idx)=>{
-    n.classList.remove('active');
-    if(idx>0&&idx<=i)n.classList.add('visited');
-    else n.classList.remove('visited');
+  document.querySelectorAll('.ndot').forEach(n=>n.classList.remove('active'));
+  D.forEach((_,j)=>{
+    const s=document.getElementById('seg'+j);
+    const c=document.getElementById('conn'+j);
+    const v=j<i;
+    if(s)s.classList.toggle('visited',v);
+    if(c)c.classList.toggle('visited',v);
   });
   const seg=document.getElementById('seg'+i);
   if(seg)seg.classList.add('active-seg');
   const nd=document.getElementById('n'+i);
   if(nd)nd.classList.add('active');
   document.getElementById('conclusion').classList.remove('show');
-  document.getElementById('panel').classList.remove('hidden');
+  const panel=document.getElementById('panel');
+  panel.classList.remove('hidden');
+  panel.classList.remove('peek');
   scrollToSeg('seg'+i);
   updatePanel(i);
   updateUI(i);
@@ -442,6 +448,20 @@ function launch(){
   setTimeout(()=>sel(0),400);
 }
 
+function initPanelHandle(){
+  const handle=document.getElementById('panel-handle');
+  const panel=document.getElementById('panel');
+  if(!handle||!panel)return;
+  let startY=0;
+  handle.addEventListener('touchstart',e=>{startY=e.touches[0].clientY;},{passive:true});
+  handle.addEventListener('touchend',e=>{
+    const dy=e.changedTouches[0].clientY-startY;
+    if(Math.abs(dy)<12)panel.classList.toggle('peek');
+    else if(dy>30)panel.classList.add('peek');
+    else if(dy<-20)panel.classList.remove('peek');
+  },{passive:true});
+}
+
 window.addEventListener('keydown',e=>{
   if(document.getElementById('intro').classList.contains('gone')){
     if(e.key==='ArrowUp')go(1);
@@ -452,6 +472,7 @@ window.addEventListener('keydown',e=>{
 
 initStars();
 buildTrack();
+initPanelHandle();
 
 setTimeout(()=>{
   if(cur>=0)return; // sel() already ran, don't override launch position
