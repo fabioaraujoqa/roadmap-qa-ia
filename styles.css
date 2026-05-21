@@ -126,6 +126,7 @@ main {
   position: relative;
   width: 100%;
   max-width: 780px;
+  --axis: calc(50% - 120px);
 }
 
 /* TRACK */
@@ -145,7 +146,7 @@ main {
 /* vertical center line */
 #vline {
   position: absolute;
-  left: 120px;
+  left: var(--axis);
   top: 0;
   bottom: 0;
   width: 1px;
@@ -186,7 +187,7 @@ main {
 .conn::after {
   content: '';
   position: absolute;
-  left: 120px;
+  left: var(--axis);
   top: 0;
   bottom: 0;
   width: 1px;
@@ -197,7 +198,7 @@ main {
 /* NODE DOT */
 .ndot {
   position: absolute;
-  left: 120px;
+  left: var(--axis);
   top: 50%;
   transform: translate(-50%, -50%);
   width: 14px;
@@ -249,7 +250,7 @@ main {
 /* LABEL */
 .nlabel {
   position: absolute;
-  left: 138px;
+  left: calc(var(--axis) + 18px);
   top: 50%;
   transform: translateY(-50%);
   font-size: 12px;
@@ -268,7 +269,7 @@ main {
 /* NUMBER BADGE */
 .nnum {
   position: absolute;
-  left: 138px;
+  left: calc(var(--axis) + 18px);
   top: calc(50% + 12px);
   font-family: 'JetBrains Mono', monospace;
   font-size: 9px;
@@ -283,7 +284,7 @@ main {
 /* LAUNCH HINT */
 .nhint {
   position: absolute;
-  left: 138px;
+  left: calc(var(--axis) + 18px);
   top: calc(50% + 16px);
   font-family: 'JetBrains Mono', monospace;
   font-size: 9px;
@@ -301,7 +302,7 @@ main {
 /* ROCKET */
 #rkt {
   position: absolute;
-  left: 76px;
+  left: calc(var(--axis) - 44px);
   transform: translateX(-50%);
   pointer-events: none;
   z-index: 20;
@@ -338,7 +339,7 @@ main {
 
 /* PANEL */
 #panel {
-  width: 50%;
+  width: 40%;
   flex-shrink: 0;
   background: var(--surface);
   border-left: 1px solid var(--border);
@@ -748,9 +749,7 @@ main {
   #panel .pscroll { padding-bottom: env(safe-area-inset-bottom, 0px); }
   #conclusion { max-height: 62vh; padding-bottom: env(safe-area-inset-bottom, 0px); }
   #prog-wrap { display: none; }
-  #vline { left: 80px; }
-  .ndot { left: 80px; }
-  .nlabel, .nnum { left: 98px; }
+  #track-center { --axis: 80px; }
   #rkt { left: 46px; }
   .panel-handle { display: block; }
 }
