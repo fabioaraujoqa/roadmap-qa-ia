@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roadmap Engenharia de Qualidade & IA — Fábio Araújo</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<canvas id="starfield"></canvas>
+<div id="intro">
+  <div class="ibox">
+    <div class="iey">Fábio Araújo</div>
+    <h1 class="ih1">Roadmap <em>Engenharia de Qualidade</em> & IA</h1>
+    <p class="ip">17 blocos de conhecimento. Uma jornada pelo universo da qualidade de software, do básico ao avançado, incluindo IA, agentes e MCP.</p>
+    <button class="icta" onclick="launch()">Iniciar jornada</button>
+    <p class="ihint">setas ↑ ↓ para navegar, clique nos pontos, ESC fecha painel</p>
+  </div>
+</div>
+<header>
+  <div><div class="logo">Roadmap QE <em>&</em> IA</div><div class="by">por Fábio Araújo</div></div>
+  <div id="prog-wrap"><div id="prog-bg"><div id="prog-fill"></div></div><div id="prog-lbl">0 de 17 blocos explorados</div></div>
+  <div id="counter">— / 17</div>
+</header>
+<main>
+  <div id="track-wrap">
+   <div id="track-center">
+    <div id="vline"></div>
+    <div id="track"></div>
+    <div id="rkt">
+      <svg viewBox="0 0 38 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <ellipse cx="19" cy="18" rx="8" ry="14" fill="#8b72ff" opacity=".97"/>
+        <polygon points="11,22 3,38 19,30 35,38 27,22" fill="#38bdf8" opacity=".82"/>
+        <circle cx="19" cy="13" r="3.5" fill="white" opacity=".92"/>
+        <ellipse cx="19" cy="32" rx="3.5" ry="5.5" fill="#f59e0b" opacity=".88"/>
+      </svg>
+      <div class="exh"></div>
+    </div>
+   </div>
+  <div id="panel" class="hidden">
+    <div class="phead">
+      <div class="pmeta" id="pmeta">01 / 17</div>
+      <div class="ptitle" id="ptitle"></div>
+    </div>
+    <div class="pscroll" id="pbody"></div>
+  </div>
+  <div id="conclusion">
+    <div class="fin-rocket">🚀</div>
+    <div class="fin-eyebrow">Ao infinito e além</div>
+    <div class="fin-h">A jornada nunca termina.</div>
+    <div class="fin-sub">A qualidade não é um destino, é uma direção. Quem constrói software com cuidado, com olhar crítico e com curiosidade constante, nunca para de evoluir. O ecossistema muda todo mês. Sua mentalidade de qualidade permanece.</div>
+    <div class="fin-quote">O conhecimento precisa de tempo para ser digerido. Mas você não pode parar de se alimentar.</div>
+    <a class="fin-cta" href="https://fabiokaia25.medium.com/1e8606b10939" target="_blank">Ler o artigo completo no Medium</a>
+    <div class="fin-by">Fábio Araújo, Especialista em Qualidade e Professor</div>
+  </div>
+</main>
+<div id="bottom">
+  <button class="nbtn" id="bbprev" onclick="go(-1)">↓</button>
+  <div id="tbar">—</div>
+  <button class="nbtn pr" id="bbnext" onclick="go(1)">↑</button>
+</div>
+<script>
+const LILAC_IDS=[2,5,8,11,14,17];
+const D=[
+  {t:"1. Competências",s:"A base da carreira QE segue a trilha Júnior, Pleno, Sênior, com bifurcação em Y para especialização técnica ou gestão. O que muda hoje é a velocidade da curva de aprendizado e o peso dado às habilidades analíticas.",c:[{n:"Carreira em Y",i:["Q.E Júnior","Q.E Pleno","Q.E Sênior","Especialista / Staff Engineer","Liderança: Coordenador / Head / Gerente"]},{n:"Soft skills",i:["Pensamento sistêmico e analítico","Pensamento crítico","Comunicação de risco","Leitura crítica de código","Aprender ferramentas novas rapidamente"]},{n:"Certificações",i:["ISTQB / CTFL","IBQTS / IIST / QAI / AXIN"]}],q:"Certificação é um ponto de partida, não um destino."},
+  {t:"2. Essenciais",s:"Nada muda aqui! Todo QE precisa dominar o básico antes de qualquer coisa. O QE que domina o DevTools resolve metade dos problemas sem abrir o código.",c:[{n:"Sistemas e Terminal",i:["Linux / Unix / macOS / Windows","Bash, PowerShell, Cmder","Comandos: grep, curl, ssh, pipes"]},{n:"Browser e Web",i:["DevTools: Console, Network, Application","DOM, HTML, CSS, XPath","Seletores CSS e XPath para automação"]},{n:"Produtividade",i:["Git, GitHub / GitLab, PRs","VS Code","Office, Notion, Confluence, Miro"]}],q:"Abrindo o DevTools Network você identifica um payload com campo vazio em produção, sem tocar no código."},
+  {t:"3. Fundamentos de Qualidade",s:"O feijão com arroz que nunca sai do menu. Precisa ser dominado de verdade, não apenas para tirar a CTFL.",c:[{n:"Estratégia",i:["Pirâmide de testes / Troféu de testes","Quadrante do teste ágil","Shift Left Testing","TDD / BDD","Estratégia e matriz de risco"]},{n:"Técnicas de design de teste",i:["Caixa preta: partição de equivalência, valor limite, tabela de decisão, transição de estado","Caixa cinza e caixa branca"]},{n:"Tipos de teste",i:["Funcional: unidade, integração, regressão, aceitação","Não funcional: performance, segurança, acessibilidade, usabilidade"]},{n:"Definições de entrega",i:["Definition of Ready (DoR)","Definition of Done (DoD)"]}],q:"Com IA gerando código, o Shift Left vai mais longe. O QE precisa estar presente na revisão do prompt."},
+  {t:"4. Gerenciamento de Testes",s:"As ferramentas evoluíram, mas o pensamento estratégico é o que diferencia. A IA chegou para acelerar a parte que todo QE ama odiar.",c:[{n:"Ferramentas",i:["Jira, ServiceNow, Trello","TM4J / Zephyr / TestRail / XRay ⭐","Wiki, Confluence, Notion, Mind Maps"]},{n:"Planejamento",i:["Cenários de teste","Análise e priorização de risco","Gerenciamento de defeitos","Relatórios de execução","AI-Assisted Test Planning ⭐"]}],q:"A IA faz o rascunho dos cenários. Você revisa, questiona e aprova. O julgamento ainda é seu."},
+  {t:"5. Negócio e Produto",s:"O QE que entende o negócio vale muito mais. Com IA gerando features rapidamente, o QE precisa ser o freio de mão.",c:[{n:"Produto",i:["História de usuário","Critérios de aceitação","Testes baseados em riscos"]},{n:"BDD",i:["Três Amigos: dev, QE, produto","Gherkin (Given / When / Then)","DoR e DoD"]},{n:"Métricas e experimentação",i:["MVPs","Feature flags e A/B testing","Analytics, OKRs, KPIs","Métricas de produto e funis"]}],q:"A feature funcionava, mas a taxa de cliques caiu 30%. Sem olhar para o negócio, passaria despercebido."},
+  {t:"6. Metodologias",s:"Scrum, Kanban, XP, SAFe. O QE precisa entender os ritos e adaptar as práticas de qualidade ao contexto.",c:[{n:"Ágil",i:["Scrum: Planning, Daily, Review, Retro, Refinamento","Kanban: WIP limits, lead time","XP: TDD, pair programming, code review","Lean Inception","SAFe"]},{n:"Tradicional (para comparação)",i:["Cascata","Modelo V"]}],q:"Qualidade não começa no teste. Começa na forma como o time organiza o trabalho."},
+  {t:"7. Testes de API",s:"Com microsserviços e arquiteturas baseadas em eventos, testar API é mandatório. Sem entender os conceitos, não dá para testar de verdade.",c:[{n:"Conceitos",i:["REST, GraphQL, gRPC","Verbos HTTP, Status codes","OAuth, JWT, API Keys, Rate limiting","JSON e estrutura de payloads"]},{n:"Ferramentas manuais",i:["Bruno ⭐","Postman / Insomnia"]},{n:"Mock e Virtualização",i:["WireMock ⭐","MSW (Mock Service Worker)","Prism"]},{n:"Automação e Contratos",i:["Supertest (JS/TS) ⭐","Rest Assured (Java)","httpx + Pytest (Python)","Joi (schema) / Pact (contratos) ⭐","Newman.js (executores CI)"]}],q:"O WireMock simula dependências. O Pact valida que o contrato não quebrou. Times independentes."},
+  {t:"8. Testes Web",s:"O foco agora é confiabilidade, performance percebida e acessibilidade. Não apenas clica e verifica.",c:[{n:"Automação E2E",i:["Playwright ⭐ (meu queridinho)","Cypress (minha especialidade)","WebdriverIO (o pai de todos)"]},{n:"Acessibilidade",i:["axe-core ⭐","WCAG 2.2","Lighthouse CI"]},{n:"Regressão visual",i:["Chromatic ⭐","Percy","Playwright screenshots"]},{n:"Conceitos",i:["Seletores CSS / XPath","Testes multi-browser e responsivos","Headed vs Headless"]}],q:"Playwright tem integração com MCP Server. O agente navega no browser e gera testes automaticamente."},
+  {t:"9. Testes Mobile",s:"Mobile First continua sendo lei. As ferramentas amadureceram e a cobertura é esperada, não opcional.",c:[{n:"Conceitos",i:["iOS e Android como plataformas distintas","Nativo vs Híbrido vs Web Mobile","Ciclo de vida do app"]},{n:"Automação",i:["Maestro ⭐ (nova geração, simples e poderoso)","Appium (cross-platform)","Detox (React Native)"]},{n:"Device Farm",i:["BrowserStack ⭐","AWS Device Farm / Sauce Labs","Android Studio Profiler / XCode Instruments"]}],q:"Rede 3G instável no BrowserStack revelou uma perda de venda silenciosa no app de delivery."},
+  {t:"10. Modernização de Legados",s:"O desafio maior hoje é modernizar sistemas legados, não apenas testá-los. O QE tem papel central nessa jornada.",c:[{n:"Conceitos",i:["Modernizar vs manter o legado","Strangler Fig Pattern","Riscos de migração"]},{n:"Estratégia",i:["Golden Master Testing ⭐","Testes de caracterização","Comparação de outputs: COBOL para Java"]},{n:"Validação e pós-migração",i:["Migração e validação de dados","Queries comparativas, tolerâncias","Testes de contrato","Smoke tests em produção"]}],q:"O QE não precisa entender COBOL. Captura outputs originais e valida que a nova API é idêntica."},
+  {t:"11. Automação de Testes",s:"O coração do QE. A automação ganhou uma camada nova: a IA como co-autora ou copiloto dos scripts.",c:[{n:"Frameworks por camada",i:["Unitário: Jest, Vitest, JUnit 5, Pytest","API: Supertest, Rest Assured, Pact ⭐","E2E Web: Playwright, Cypress ⭐","Mobile: Maestro, Appium ⭐","Visual: Chromatic, Percy"]},{n:"Boas práticas",i:["Clean Code + SOLID","Page Objects / Commands / AppActions","BDD + Gherkin (docs vivas)","Evitar flaky tests"]},{n:"IA na automação ✨",i:["Playwright MCP ⭐","Appium MCP ⭐","K6 MCP ⭐","Cypress Prompt()"]},{n:"Massa de dados",i:["Faker, Fixtures, DB","Json, Yml, Csv","Queries / DataSet"]}],q:"30 min virou 8 min com Copilot. Mas o julgamento sobre o que testar continuou sendo humano."},
+  {t:"12. DevOps e Pipeline",s:"O QE moderno não entrega testes: entrega qualidade no pipeline. Shift Right é a extensão natural do Shift Left.",c:[{n:"Pipeline CI/CD",i:["GitHub Actions ⭐","GitLab CI / Jenkins / CircleCI","Continuous Integration, Delivery, Deployment"]},{n:"Qualidade e paralelismo",i:["SonarCloud / SonarQube ⭐ (Quality Gates)","Playwright sharding","Cypress Dashboard","Docker / Kubernetes / OpenShift"]},{n:"Observabilidade",i:["Logs estruturados, traces, vídeos de CI","Chaos engineering básico","Feature flags, Shift Right"]},{n:"Monitoria (Shift Right)",i:["Grafana Labs ⭐","Dynatrace","DataDog"]}],q:"20 min virou 5 min com Playwright sharding. Mesma cobertura, estratégia de execução diferente."},
+  {t:"13. Linguagem de Programação",s:"O QE precisa dominar pelo menos uma linguagem com profundidade e ter leitura em outras.",c:[{n:"Recomendações: pelo menos 1",i:["TypeScript ⭐ (Playwright, Cypress, Jest, Node)","Python (Pytest, IA/ML testing)","Java (JUnit, Rest Assured, Selenium)","Kotlin (mobile Android)","Ruby / Groovy"]},{n:"Conceitos fundamentais",i:["Orientação a objetos e Design Patterns","Princípios SOLID","Async/await, Promises","Variáveis de ambiente, logs"]}],q:"Um await sem timeout causa flaky tests. Só quem domina a linguagem corrige sem acionar o dev."},
+  {t:"14. Dados",s:"Banco de dados é onde a verdade mora. O QE analítico vai além da tela e valida diretamente nos dados.",c:[{n:"SQL",i:["SELECT, JOIN, GROUP BY, CTEs","Persistência pós-teste","Queries comparativas"]},{n:"NoSQL e Mensageria",i:["MongoDB, Redis, DynamoDB","Kafka ⭐ / RabbitMQ / SQS"]},{n:"Data quality",i:["ETL / ELT","Integridade, completude, consistência"]},{n:"Ferramentas",i:["DBeaver ⭐ / SQL Server","MongoDB Compass / Kafka UI"]}],q:"Pedido gravado? Estoque decrementado? Evento no Kafka publicado? Três sistemas, um fluxo garantido."},
+  {t:"15. Testes Não Funcionais",s:"Performance é qualidade. Segurança é qualidade. Acessibilidade é qualidade. Requisitos de primeira classe, não opcionais.",c:[{n:"Tipos de performance",i:["Carga (Load)","Pico (Spike), Black Friday","Resistência (Soak/Endurance)","Estresse (Stress)","Escalabilidade","Testes Distribuídos"]},{n:"Ferramentas de performance",i:["k6 ⭐","Gatling / Locust","JMeter / BlazeMeter","Lighthouse CI / Core Web Vitals"]},{n:"Segurança",i:["OWASP Top 10: XSS, IDOR, SSRF","DAST / SAST","OWASP ZAP ⭐","Snyk / Dependabot (CVEs)","Semgrep / Checkmarx / Veracode"]}],q:"Sobrevivi a 5 Black Fridays. O sistema que caiu no 3º minuto tinha 2 semanas para ser corrigido."},
+  {t:"16. Inteligência Artificial",s:"Não é opcional: é o que diferencia o QE atual do QE de alguns anos atrás.",c:[{n:"Literacia em IA",i:["LLMs: GPT-4, Claude, Gemini, Llama","Alucinações e temperatura","Janela de contexto","RAG, Skills, Agentes","Tokens, custos e otimização"]},{n:"Engenharia de Prompts",i:["Zero-shot, Few-shot, Chain-of-thought","Prompt para geração de testes","Prompt para análise de código","Prompt para review de PR","Prompt para tickets via MCP"]},{n:"Testando sistemas com IA",i:["Não-determinismo","Testes de alucinação","Prompt injection ⚠️","LLM-as-judge","Testes de bias","Regressão de prompt"]},{n:"Agentes e MCP",i:["Model Context Protocol (Anthropic) ⭐","Loop: instrução, ferramenta, resultado","Skills como funções testáveis","Playwright MCP / Appium MCP / K6 MCP"]}],q:"O chatbot retornou dados em 2 de 5 inputs maliciosos. Prompt injection documentada antes do lançamento."},
+  {t:"17. Análise de Código",s:"O bloco que mais diferencia o QE atual. Não é necessário ser dev, mas saber ler e analisar código é essencial.",c:[{n:"O que o QE deve fazer",i:["Leitura de diffs e PRs","Identificar edge cases ausentes","Identificar violações de SOLID","Refatoração para testabilidade","Code review com foco em qualidade"]},{n:"Métricas",i:["Cobertura de testes: não é qualidade!","Code Smell, Complexidade, Duplicidade","Security Hotspots (SonarQube)","MTTR (Mean Time to Repair)","Defect Escape Rate","DORA Metrics (Google)"]},{n:"Ferramentas",i:["SonarQube / SonarCloud ⭐","CodeClimate / Codecov","Semgrep / Checkmarx / Veracode","Cursor / Copilot (entender legado)"]}],q:"100% de cobertura de linhas, 0% de qualidade real. O QE bloqueou o PR e pediu os edge cases faltantes."}
+];
+
+let cur=-1;
+function isLilac(i){return LILAC_IDS.includes(i+1)}
+
+// ─── PARALLAX STARFIELD ───────────────────────────────────────────────────────
+function initStars(){
+  const canvas=document.getElementById('starfield');
+  const ctx=canvas.getContext('2d');
+
+  function resize(){
+    canvas.width=window.innerWidth;
+    canvas.height=window.innerHeight;
+  }
+  resize();
+  window.addEventListener('resize',resize);
+
+  // Layer 0 – far background: many tiny dim stars
+  const stars=[];
+  for(let i=0;i<180;i++) stars.push({
+    nx:Math.random(),ny:Math.random(),
+    r:Math.random()*0.55+0.1,
+    baseOpacity:Math.random()*0.28+0.06,
+    phase:Math.random()*Math.PI*2,
+    speed:Math.random()*0.006+0.002,
+    depth:Math.random()*0.2,
+    glow:false
+  });
+  // Layer 1 – mid: medium stars
+  for(let i=0;i<90;i++) stars.push({
+    nx:Math.random(),ny:Math.random(),
+    r:Math.random()*0.85+0.3,
+    baseOpacity:Math.random()*0.38+0.12,
+    phase:Math.random()*Math.PI*2,
+    speed:Math.random()*0.010+0.003,
+    depth:0.2+Math.random()*0.3,
+    glow:false
+  });
+  // Layer 2 – near: larger stars
+  for(let i=0;i<40;i++) stars.push({
+    nx:Math.random(),ny:Math.random(),
+    r:Math.random()*1.3+0.6,
+    baseOpacity:Math.random()*0.45+0.18,
+    phase:Math.random()*Math.PI*2,
+    speed:Math.random()*0.013+0.004,
+    depth:0.5+Math.random()*0.3,
+    glow:false
+  });
+  // Layer 3 – foreground: bright stars with glow bloom
+  for(let i=0;i<18;i++) stars.push({
+    nx:Math.random(),ny:Math.random(),
+    r:Math.random()*1.6+1.1,
+    baseOpacity:Math.random()*0.3+0.55,
+    phase:Math.random()*Math.PI*2,
+    speed:Math.random()*0.008+0.003,
+    depth:0.8+Math.random()*0.2,
+    glow:true
+  });
+
+  // Nebula blobs – layered gradients for depth
+  const nebulae=[
+    {nx:0.18,ny:0.22,r:380,rgb:[139,114,255],o:0.18,depth:0.10},
+    {nx:0.72,ny:0.50,r:320,rgb:[56,189,248], o:0.14,depth:0.07},
+    {nx:0.40,ny:0.80,r:300,rgb:[192,132,252],o:0.16,depth:0.14},
+    {nx:0.60,ny:0.15,r:260,rgb:[100,160,255],o:0.12,depth:0.09},
+    {nx:0.28,ny:0.58,r:220,rgb:[139,114,255],o:0.10,depth:0.05},
+    {nx:0.75,ny:0.78,r:200,rgb:[192,132,252],o:0.09,depth:0.12},
+  ];
+
+  // Shooting stars pool
+  const shooters=[];
+  let nextShoot=performance.now()+2500+Math.random()*5000;
+
+  function spawnShooter(W,H){
+    const angle=Math.PI/4+Math.random()*Math.PI/6;
+    const spd=6+Math.random()*5;
+    return{
+      x:Math.random()*W*0.7,
+      y:Math.random()*H*0.4,
+      vx:Math.cos(angle)*spd,
+      vy:Math.sin(angle)*spd,
+      len:50+Math.random()*90,
+      life:1.0
+    };
+  }
+
+  // Parallax state
+  let mouseNX=0,mouseNY=0;
+  let pmx=0,pmy=0;
+  let scrollTarget=0,scrollCurrent=0;
+
+  const MAX_MOUSE=50;
+  const MAX_SCROLL=65;
+
+  document.addEventListener('mousemove',e=>{
+    mouseNX=e.clientX/window.innerWidth -0.5;
+    mouseNY=e.clientY/window.innerHeight-0.5;
+  });
+
+  window.setParallaxScroll=function(normPos){
+    scrollTarget=normPos*MAX_SCROLL;
+  };
+
+  function draw(){
+    const W=canvas.width,H=canvas.height;
+    ctx.clearRect(0,0,W,H);
+
+    // Very smooth float feel
+    pmx+=(mouseNX-pmx)*0.028;
+    pmy+=(mouseNY-pmy)*0.028;
+    scrollCurrent+=(scrollTarget-scrollCurrent)*0.04;
+
+    // Vignette – darkens edges for depth
+    const vig=ctx.createRadialGradient(W/2,H/2,0,W/2,H/2,Math.max(W,H)*0.72);
+    vig.addColorStop(0,'rgba(0,0,0,0)');
+    vig.addColorStop(0.5,'rgba(6,8,15,0.05)');
+    vig.addColorStop(1,'rgba(6,8,15,0.45)');
+    ctx.fillStyle=vig;
+    ctx.fillRect(0,0,W,H);
+
+    // Nebulae
+    nebulae.forEach(n=>{
+      const sh=n.depth*MAX_MOUSE;
+      const sx=n.nx*W+pmx*sh;
+      const sy=n.ny*H+pmy*sh+scrollCurrent*n.depth;
+      const g=ctx.createRadialGradient(sx,sy,0,sx,sy,n.r);
+      g.addColorStop(0,`rgba(${n.rgb},${n.o})`);
+      g.addColorStop(0.35,`rgba(${n.rgb},${(n.o*0.55).toFixed(3)})`);
+      g.addColorStop(0.7,`rgba(${n.rgb},${(n.o*0.18).toFixed(3)})`);
+      g.addColorStop(1,`rgba(${n.rgb},0)`);
+      ctx.fillStyle=g;
+      ctx.beginPath();
+      ctx.arc(sx,sy,n.r,0,Math.PI*2);
+      ctx.fill();
+    });
+
+    // Stars
+    stars.forEach(p=>{
+      p.phase+=p.speed;
+      const sh=p.depth*MAX_MOUSE;
+      const sx=p.nx*W+pmx*sh;
+      const sy=p.ny*H+pmy*sh+scrollCurrent*p.depth*0.55;
+      const alpha=p.baseOpacity*(0.45+0.55*Math.sin(p.phase));
+
+      if(p.glow){
+        // Soft bloom around bright stars
+        const bloom=ctx.createRadialGradient(sx,sy,0,sx,sy,p.r*5);
+        bloom.addColorStop(0,`rgba(220,210,255,${(alpha*0.55).toFixed(3)})`);
+        bloom.addColorStop(0.4,`rgba(180,160,255,${(alpha*0.12).toFixed(3)})`);
+        bloom.addColorStop(1,'rgba(139,114,255,0)');
+        ctx.fillStyle=bloom;
+        ctx.beginPath();
+        ctx.arc(sx,sy,p.r*5,0,Math.PI*2);
+        ctx.fill();
+      }
+
+      ctx.beginPath();
+      ctx.arc(sx,sy,p.r,0,Math.PI*2);
+      ctx.fillStyle=`rgba(255,255,255,${alpha.toFixed(3)})`;
+      ctx.fill();
+    });
+
+    // Shooting stars
+    const now=performance.now();
+    if(now>=nextShoot){
+      shooters.push(spawnShooter(W,H));
+      nextShoot=now+4000+Math.random()*9000;
+    }
+    for(let i=shooters.length-1;i>=0;i--){
+      const s=shooters[i];
+      s.x+=s.vx;s.y+=s.vy;
+      s.life-=0.018;
+      if(s.life<=0){shooters.splice(i,1);continue;}
+      const angle=Math.atan2(s.vy,s.vx);
+      const tx=s.x-Math.cos(angle)*s.len*s.life;
+      const ty=s.y-Math.sin(angle)*s.len*s.life;
+      const sg=ctx.createLinearGradient(tx,ty,s.x,s.y);
+      sg.addColorStop(0,'rgba(255,255,255,0)');
+      sg.addColorStop(0.7,`rgba(200,190,255,${(s.life*0.5).toFixed(3)})`);
+      sg.addColorStop(1,`rgba(255,255,255,${(s.life*0.9).toFixed(3)})`);
+      ctx.beginPath();ctx.moveTo(tx,ty);ctx.lineTo(s.x,s.y);
+      ctx.strokeStyle=sg;ctx.lineWidth=1.2*s.life;ctx.stroke();
+    }
+
+    requestAnimationFrame(draw);
+  }
+
+  draw();
+}
+
+// ─── TRACK ────────────────────────────────────────────────────────────────────
+function buildTrack(){
+  const tr=document.getElementById('track');
+
+  // Phantom nodes at visual bottom (column-reverse: first appended = bottom)
+  for(let p=0;p<4;p++){
+    const pSeg=document.createElement('div');pSeg.className='seg';pSeg.style.cursor='default';
+    const pDot=document.createElement('div');pDot.className='ndot';
+    pDot.style.cssText='opacity:0.10;border-style:dashed';
+    pSeg.appendChild(pDot);tr.appendChild(pSeg);
+    const pCo=document.createElement('div');pCo.className='conn';tr.appendChild(pCo);
+  }
+
+  const launchSeg=document.createElement('div');launchSeg.className='seg';launchSeg.id='segLaunch';
+  launchSeg.style.cursor='default';
+  const launchDot=document.createElement('div');launchDot.className='ndot';
+  launchDot.style.cssText='width:20px;height:20px;border-color:rgba(139,114,255,.6);background:rgba(139,114,255,.15)';
+  const launchLb=document.createElement('div');launchLb.className='nlabel';launchLb.textContent='Inicie sua jornada';
+  launchLb.style.cssText='color:var(--accent);font-weight:600;font-size:13px';
+  const launchHint=document.createElement('div');launchHint.className='nhint';
+  launchHint.textContent='↑ pressione Próximo para avançar';
+  launchSeg.appendChild(launchDot);launchSeg.appendChild(launchLb);launchSeg.appendChild(launchHint);
+  tr.appendChild(launchSeg);
+
+  D.forEach((d,i)=>{
+    const co=document.createElement('div');co.className='conn';tr.appendChild(co);
+    const isL=isLilac(i);
+    const seg=document.createElement('div');seg.className='seg'+(isL?' lil-seg':'');seg.id='seg'+i;
+    seg.onclick=()=>sel(i);
+    const nd=document.createElement('div');nd.className='ndot';nd.id='n'+i;
+    const lb=document.createElement('div');lb.className='nlabel';lb.textContent=d.t;
+    const nm=document.createElement('div');nm.className='nnum';nm.textContent='bloco '+String(i+1).padStart(2,'0');
+    seg.appendChild(nd);seg.appendChild(lb);seg.appendChild(nm);
+    tr.appendChild(seg);
+  });
+
+  const coCo=document.createElement('div');coCo.className='conn';tr.appendChild(coCo);
+  const endSeg=document.createElement('div');endSeg.className='seg lil-seg';endSeg.id='segEnd';endSeg.onclick=showConclusion;
+  const endDot=document.createElement('div');endDot.className='ndot';
+  endDot.style.cssText='width:20px;height:20px;border-color:var(--lilac);background:rgba(192,132,252,.15)';
+  const endLb=document.createElement('div');endLb.className='nlabel';endLb.textContent='Ao infinito e além...';
+  endLb.style.cssText='color:var(--lilac);font-weight:600;font-size:13px';
+  endSeg.appendChild(endDot);endSeg.appendChild(endLb);
+  tr.appendChild(endSeg);
+
+  // Ghost nodes above end — extends the line upward, suggesting infinite journey
+  for(let g=0;g<5;g++){
+    const gCo=document.createElement('div');gCo.className='conn';tr.appendChild(gCo);
+    const gSeg=document.createElement('div');gSeg.className='seg';gSeg.style.cursor='default';
+    const gDot=document.createElement('div');gDot.className='ndot';
+    gDot.style.cssText=`opacity:${(0.08*(5-g)).toFixed(2)};border-style:dashed`;
+    gSeg.appendChild(gDot);tr.appendChild(gSeg);
+  }
+}
+
+function scrollToSeg(segId){
+  const tc=document.getElementById('track-center');
+  const seg=document.getElementById(segId);
+  if(!seg)return;
+  const wh=tc.offsetHeight;
+  const segTop=seg.offsetTop;
+  const segH=seg.offsetHeight;
+  const segMid=segTop+segH/2;
+  const trackH=document.getElementById('track').scrollHeight;
+  const distFromBottom=trackH-segMid;
+
+  // On mobile the panel is position:fixed at the bottom (CSS media query ≤768px)
+  // Center the rocket in the visible map area above the panel
+  const panel=document.getElementById('panel');
+  let effectiveCenter=wh/2;
+  if(!panel.classList.contains('hidden') && getComputedStyle(panel).position==='fixed'){
+    const panelH=window.innerHeight*0.62;
+    const tcTop=tc.getBoundingClientRect().top;
+    const panelTop=window.innerHeight-panelH;
+    const visibleMapH=Math.max(panelTop-tcTop, 80);
+    effectiveCenter=wh-visibleMapH/2;
+  }
+
+  const shift=distFromBottom-effectiveCenter;
+  document.getElementById('track').style.transform=`translateY(${shift}px)`;
+  setTimeout(()=>{
+    const rkt=document.getElementById('rkt');
+    rkt.style.bottom=(effectiveCenter-19)+'px';
+  },50);
+}
+
+function sel(i){
+  if(i<0||i>=D.length)return;
+  cur=i;
+  document.querySelectorAll('.seg').forEach(s=>s.classList.remove('active-seg'));
+  document.querySelectorAll('.ndot').forEach((n,idx)=>{
+    n.classList.remove('active');
+    if(idx>0&&idx<=i)n.classList.add('visited');
+    else n.classList.remove('visited');
+  });
+  const seg=document.getElementById('seg'+i);
+  if(seg)seg.classList.add('active-seg');
+  const nd=document.getElementById('n'+i);
+  if(nd)nd.classList.add('active');
+  document.getElementById('conclusion').classList.remove('show');
+  document.getElementById('panel').classList.remove('hidden');
+  scrollToSeg('seg'+i);
+  updatePanel(i);
+  updateUI(i);
+
+  // Parallax scroll drift as user progresses through the roadmap
+  if(window.setParallaxScroll) window.setParallaxScroll(i/(D.length-1));
+}
+
+function updatePanel(i){
+  const d=D[i];const isL=isLilac(i);
+  document.getElementById('panel').classList.remove('hidden');
+  const pm=document.getElementById('pmeta');
+  pm.textContent=String(i+1).padStart(2,'0')+' / 17';
+  pm.className='pmeta'+(isL?' lm':'');
+  document.getElementById('ptitle').textContent=d.t;
+  let h=`<p class="summary">${d.s}</p>`;
+  d.c.forEach((cat,ci)=>{
+    const lc=isL&&ci%2===1?'clbl lil':'clbl';
+    h+=`<div class="${lc}">${cat.n}</div><div class="tags">`;
+    cat.i.forEach(item=>{
+      const hl=item.includes('⭐')||item.includes('✨');
+      const hw=item.includes('⚠️');
+      const cls=hl?(isL?'tag hll':'tag hl'):hw?'tag hll':'tag';
+      h+=`<span class="${cls}">${item}</span>`;
+    });
+    h+='</div>';
+  });
+  h+=`<div class="${isL?'callout lil':'callout'}">${d.q}</div>`;
+  document.getElementById('pbody').innerHTML=h;
+  document.getElementById('pbody').scrollTop=0;
+}
+
+function updateUI(i){
+  const isL=isLilac(i);
+  const pct=((i+1)/D.length*100).toFixed(0);
+  document.getElementById('prog-fill').style.width=pct+'%';
+  document.getElementById('prog-lbl').textContent=`${i+1} de 17 blocos explorados`;
+  document.getElementById('counter').textContent=String(i+1).padStart(2,'0')+' / 17';
+  document.getElementById('tbar').textContent=D[i].t;
+  document.getElementById('bbprev').disabled=i===0;
+  const bb=document.getElementById('bbnext');
+  bb.className='nbtn pr'+(isL?' lil':'');
+  if(i===D.length-1){bb.onclick=showConclusion;bb.disabled=false}
+  else{bb.onclick=()=>go(1);bb.disabled=false}
+}
+
+function showConclusion(){
+  document.getElementById('panel').classList.add('hidden');
+  document.getElementById('conclusion').classList.add('show');
+  document.getElementById('prog-fill').style.width='100%';
+  document.getElementById('prog-lbl').textContent='Jornada completa!';
+  document.getElementById('counter').textContent='17 / 17';
+  document.getElementById('tbar').textContent='Ao infinito e além...';
+  document.getElementById('bbprev').disabled=false;
+  document.getElementById('bbprev').onclick=()=>{document.getElementById('conclusion').classList.remove('show');sel(D.length-1)};
+  document.getElementById('bbnext').disabled=true;
+  scrollToSeg('segEnd');
+  if(window.setParallaxScroll) window.setParallaxScroll(1);
+}
+
+function go(dir){
+  if(dir===1&&cur===D.length-1){showConclusion();return}
+  if(dir===-1&&cur===0)return;
+  sel(cur+dir);
+}
+
+function launch(){
+  document.getElementById('intro').classList.add('gone');
+  setTimeout(()=>sel(0),400);
+}
+
+window.addEventListener('keydown',e=>{
+  if(document.getElementById('intro').classList.contains('gone')){
+    if(e.key==='ArrowUp')go(1);
+    if(e.key==='ArrowDown')go(-1);
+    if(e.key==='Escape')document.getElementById('panel').classList.add('hidden');
+  }
+});
+
+initStars();
+buildTrack();
+
+setTimeout(()=>{
+  if(cur>=0)return; // sel() already ran, don't override launch position
+  const track=document.getElementById('track');
+  const rkt=document.getElementById('rkt');
+  const tc=document.getElementById('track-center');
+  // Show launch node without animation
+  track.style.transition='none';
+  track.style.transform='translateY(0)';
+  requestAnimationFrame(()=>{
+    const seg=document.getElementById('segLaunch');
+    const tcRect=tc.getBoundingClientRect();
+    const segRect=seg.getBoundingClientRect();
+    // Align rocket center with segLaunch center
+    const bottom=tcRect.bottom-(segRect.top+segRect.height/2)-26;
+    rkt.style.bottom=Math.max(Math.round(bottom),20)+'px';
+    track.style.transition='';
+  });
+},200);
+</script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - generic [ref=e4]:
+        - text: Roadmap QE
+        - emphasis [ref=e5]: "&"
+        - text: IA
+      - generic [ref=e6]: por Fábio Araújo
+    - generic [ref=e10]: 5 de 17 blocos explorados
+    - generic [ref=e11]: 05 / 17
+  - main [ref=e12]:
+    - generic [ref=e13]:
+      - generic [ref=e14]:
+        - generic [ref=e15]:
+          - generic [ref=e16]:
+            - generic: Inicie sua jornada
+            - generic: ↑ pressione Próximo para avançar
+          - generic [ref=e19] [cursor=pointer]:
+            - generic: 1. Competências
+            - generic: bloco 01
+          - generic [ref=e22] [cursor=pointer]:
+            - generic: 2. Essenciais
+            - generic: bloco 02
+          - generic [ref=e25] [cursor=pointer]:
+            - generic: 3. Fundamentos de Qualidade
+            - generic: bloco 03
+          - generic [ref=e28] [cursor=pointer]:
+            - generic: 4. Gerenciamento de Testes
+            - generic: bloco 04
+          - generic [ref=e31] [cursor=pointer]:
+            - generic: 5. Negócio e Produto
+            - generic: bloco 05
+          - generic [ref=e34] [cursor=pointer]:
+            - generic: 6. Metodologias
+            - generic: bloco 06
+          - generic [ref=e37] [cursor=pointer]:
+            - generic: 7. Testes de API
+            - generic: bloco 07
+          - generic [ref=e40] [cursor=pointer]:
+            - generic: 8. Testes Web
+            - generic: bloco 08
+          - generic [ref=e43] [cursor=pointer]:
+            - generic: 9. Testes Mobile
+            - generic: bloco 09
+          - generic [ref=e46] [cursor=pointer]:
+            - generic: 10. Modernização de Legados
+            - generic: bloco 10
+          - generic [ref=e49] [cursor=pointer]:
+            - generic: 11. Automação de Testes
+            - generic: bloco 11
+          - generic [ref=e52] [cursor=pointer]:
+            - generic: 12. DevOps e Pipeline
+            - generic: bloco 12
+          - generic [ref=e55] [cursor=pointer]:
+            - generic: 13. Linguagem de Programação
+            - generic: bloco 13
+          - generic [ref=e58] [cursor=pointer]:
+            - generic: 14. Dados
+            - generic: bloco 14
+          - generic [ref=e61] [cursor=pointer]:
+            - generic: 15. Testes Não Funcionais
+            - generic: bloco 15
+          - generic [ref=e64] [cursor=pointer]:
+            - generic: 16. Inteligência Artificial
+            - generic: bloco 16
+          - generic [ref=e67] [cursor=pointer]:
+            - generic: 17. Análise de Código
+            - generic: bloco 17
+          - generic [ref=e70] [cursor=pointer]:
+            - generic: Ao infinito e além...
+        - generic:
+          - img
+      - generic [ref=e72]:
+        - generic [ref=e73]:
+          - generic [ref=e74]: 05 / 17
+          - generic [ref=e75]: 5. Negócio e Produto
+        - generic [ref=e76]:
+          - paragraph [ref=e77]: O QE que entende o negócio vale muito mais. Com IA gerando features rapidamente, o QE precisa ser o freio de mão.
+          - generic [ref=e78]: Produto
+          - generic [ref=e79]:
+            - generic [ref=e80]: História de usuário
+            - generic [ref=e81]: Critérios de aceitação
+            - generic [ref=e82]: Testes baseados em riscos
+          - generic [ref=e83]: BDD
+          - generic [ref=e84]:
+            - generic [ref=e85]: "Três Amigos: dev, QE, produto"
+            - generic [ref=e86]: Gherkin (Given / When / Then)
+            - generic [ref=e87]: DoR e DoD
+          - generic [ref=e88]: Métricas e experimentação
+          - generic [ref=e89]:
+            - generic [ref=e90]: MVPs
+            - generic [ref=e91]: Feature flags e A/B testing
+            - generic [ref=e92]: Analytics, OKRs, KPIs
+            - generic [ref=e93]: Métricas de produto e funis
+          - generic [ref=e94]: A feature funcionava, mas a taxa de cliques caiu 30%. Sem olhar para o negócio, passaria despercebido.
+        - generic [ref=e95]:
+          - button "↓ Anterior" [ref=e96] [cursor=pointer]
+          - button "Próximo ↑" [ref=e97] [cursor=pointer]
+  - generic [ref=e98]:
+    - button "↓" [ref=e99] [cursor=pointer]
+    - generic [ref=e100]: 5. Negócio e Produto
+    - button "↑" [ref=e101] [cursor=pointer]

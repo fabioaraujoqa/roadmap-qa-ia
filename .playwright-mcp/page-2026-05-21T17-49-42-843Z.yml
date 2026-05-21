@@ -1,0 +1,102 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e10]:
+    - generic [ref=e11]:
+      - generic [ref=e12]:
+        - text: Roadmap QE
+        - emphasis [ref=e13]: "&"
+        - text: IA
+      - generic [ref=e14]: por Fábio Araújo
+    - generic [ref=e17]: 1 de 17 blocos explorados
+    - generic [ref=e18]: 01 / 17
+  - main [ref=e19]:
+    - generic [ref=e20]:
+      - generic [ref=e21]:
+        - generic [ref=e22]:
+          - generic: Inicie sua jornada
+        - generic [ref=e25] [cursor=pointer]:
+          - generic: 1. Competências
+          - generic: bloco 01
+        - generic [ref=e28] [cursor=pointer]:
+          - generic: 2. Essenciais
+          - generic: bloco 02
+        - generic [ref=e31] [cursor=pointer]:
+          - generic: 3. Fundamentos de Qualidade
+          - generic: bloco 03
+        - generic [ref=e34] [cursor=pointer]:
+          - generic: 4. Gerenciamento de Testes
+          - generic: bloco 04
+        - generic [ref=e37] [cursor=pointer]:
+          - generic: 5. Negócio e Produto
+          - generic: bloco 05
+        - generic [ref=e40] [cursor=pointer]:
+          - generic: 6. Metodologias
+          - generic: bloco 06
+        - generic [ref=e43] [cursor=pointer]:
+          - generic: 7. Testes de API
+          - generic: bloco 07
+        - generic [ref=e46] [cursor=pointer]:
+          - generic: 8. Testes Web
+          - generic: bloco 08
+        - generic [ref=e49] [cursor=pointer]:
+          - generic: 9. Testes Mobile
+          - generic: bloco 09
+        - generic [ref=e52] [cursor=pointer]:
+          - generic: 10. Modernização de Legados
+          - generic: bloco 10
+        - generic [ref=e55] [cursor=pointer]:
+          - generic: 11. Automação de Testes
+          - generic: bloco 11
+        - generic [ref=e58] [cursor=pointer]:
+          - generic: 12. DevOps e Pipeline
+          - generic: bloco 12
+        - generic [ref=e61] [cursor=pointer]:
+          - generic: 13. Linguagem de Programação
+          - generic: bloco 13
+        - generic [ref=e64] [cursor=pointer]:
+          - generic: 14. Dados
+          - generic: bloco 14
+        - generic [ref=e67] [cursor=pointer]:
+          - generic: 15. Testes Não Funcionais
+          - generic: bloco 15
+        - generic [ref=e70] [cursor=pointer]:
+          - generic: 16. Inteligência Artificial
+          - generic: bloco 16
+        - generic [ref=e73] [cursor=pointer]:
+          - generic: 17. Análise de Código
+          - generic: bloco 17
+        - generic [ref=e76] [cursor=pointer]:
+          - generic: Ao infinito e além...
+      - generic:
+        - img
+    - generic [ref=e83]:
+      - generic [ref=e84]:
+        - generic [ref=e85]: 01 / 17
+        - generic [ref=e86]: 1. Competências
+      - generic [ref=e87]:
+        - paragraph [ref=e88]: A base da carreira QE segue a trilha Júnior, Pleno, Sênior, com bifurcação em Y para especialização técnica ou gestão. O que muda hoje é a velocidade da curva de aprendizado e o peso dado às habilidades analíticas.
+        - generic [ref=e89]: Carreira em Y
+        - generic [ref=e90]:
+          - generic [ref=e91]: Q.E Júnior
+          - generic [ref=e92]: Q.E Pleno
+          - generic [ref=e93]: Q.E Sênior
+          - generic [ref=e94]: Especialista / Staff Engineer
+          - generic [ref=e95]: "Liderança: Coordenador / Head / Gerente"
+        - generic [ref=e96]: Soft skills
+        - generic [ref=e97]:
+          - generic [ref=e98]: Pensamento sistêmico e analítico
+          - generic [ref=e99]: Pensamento crítico
+          - generic [ref=e100]: Comunicação de risco
+          - generic [ref=e101]: Leitura crítica de código
+          - generic [ref=e102]: Aprender ferramentas novas rapidamente
+        - generic [ref=e103]: Certificações
+        - generic [ref=e104]:
+          - generic [ref=e105]: ISTQB / CTFL
+          - generic [ref=e106]: IBQTS / IIST / QAI / AXIN
+        - generic [ref=e107]: Certificação é um ponto de partida, não um destino.
+      - generic [ref=e108]:
+        - button "↓ Anterior" [disabled]
+        - button "Próximo ↑" [ref=e109] [cursor=pointer]
+  - generic [ref=e78]:
+    - button "↓" [disabled]
+    - generic [ref=e80]: 1. Competências
+    - button "↑" [ref=e81] [cursor=pointer]

@@ -1,0 +1,104 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e10]:
+    - generic [ref=e11]:
+      - generic [ref=e12]:
+        - text: Roadmap QE
+        - emphasis [ref=e13]: "&"
+        - text: IA
+      - generic [ref=e14]: por Fábio Araújo
+    - generic [ref=e17]: 1 de 17 blocos explorados
+    - generic [ref=e18]: 01 / 17
+  - main [ref=e19]:
+    - generic [ref=e20]:
+      - generic [ref=e21]:
+        - generic [ref=e22]:
+          - generic [ref=e23]:
+            - generic: Inicie sua jornada
+            - generic: ↑ pressione Próximo para avançar
+          - generic [ref=e26] [cursor=pointer]:
+            - generic: 1. Competências
+            - generic: bloco 01
+          - generic [ref=e29] [cursor=pointer]:
+            - generic: 2. Essenciais
+            - generic: bloco 02
+          - generic [ref=e32] [cursor=pointer]:
+            - generic: 3. Fundamentos de Qualidade
+            - generic: bloco 03
+          - generic [ref=e35] [cursor=pointer]:
+            - generic: 4. Gerenciamento de Testes
+            - generic: bloco 04
+          - generic [ref=e38] [cursor=pointer]:
+            - generic: 5. Negócio e Produto
+            - generic: bloco 05
+          - generic [ref=e41] [cursor=pointer]:
+            - generic: 6. Metodologias
+            - generic: bloco 06
+          - generic [ref=e44] [cursor=pointer]:
+            - generic: 7. Testes de API
+            - generic: bloco 07
+          - generic [ref=e47] [cursor=pointer]:
+            - generic: 8. Testes Web
+            - generic: bloco 08
+          - generic [ref=e50] [cursor=pointer]:
+            - generic: 9. Testes Mobile
+            - generic: bloco 09
+          - generic [ref=e53] [cursor=pointer]:
+            - generic: 10. Modernização de Legados
+            - generic: bloco 10
+          - generic [ref=e56] [cursor=pointer]:
+            - generic: 11. Automação de Testes
+            - generic: bloco 11
+          - generic [ref=e59] [cursor=pointer]:
+            - generic: 12. DevOps e Pipeline
+            - generic: bloco 12
+          - generic [ref=e62] [cursor=pointer]:
+            - generic: 13. Linguagem de Programação
+            - generic: bloco 13
+          - generic [ref=e65] [cursor=pointer]:
+            - generic: 14. Dados
+            - generic: bloco 14
+          - generic [ref=e68] [cursor=pointer]:
+            - generic: 15. Testes Não Funcionais
+            - generic: bloco 15
+          - generic [ref=e71] [cursor=pointer]:
+            - generic: 16. Inteligência Artificial
+            - generic: bloco 16
+          - generic [ref=e74] [cursor=pointer]:
+            - generic: 17. Análise de Código
+            - generic: bloco 17
+          - generic [ref=e77] [cursor=pointer]:
+            - generic: Ao infinito e além...
+        - generic:
+          - img
+      - generic [ref=e84]:
+        - generic [ref=e85]:
+          - generic [ref=e86]: 01 / 17
+          - generic [ref=e87]: 1. Competências
+        - generic [ref=e88]:
+          - paragraph [ref=e89]: A base da carreira QE segue a trilha Júnior, Pleno, Sênior, com bifurcação em Y para especialização técnica ou gestão. O que muda hoje é a velocidade da curva de aprendizado e o peso dado às habilidades analíticas.
+          - generic [ref=e90]: Carreira em Y
+          - generic [ref=e91]:
+            - generic [ref=e92]: Q.E Júnior
+            - generic [ref=e93]: Q.E Pleno
+            - generic [ref=e94]: Q.E Sênior
+            - generic [ref=e95]: Especialista / Staff Engineer
+            - generic [ref=e96]: "Liderança: Coordenador / Head / Gerente"
+          - generic [ref=e97]: Soft skills
+          - generic [ref=e98]:
+            - generic [ref=e99]: Pensamento sistêmico e analítico
+            - generic [ref=e100]: Pensamento crítico
+            - generic [ref=e101]: Comunicação de risco
+            - generic [ref=e102]: Leitura crítica de código
+            - generic [ref=e103]: Aprender ferramentas novas rapidamente
+          - generic [ref=e104]: Certificações
+          - generic [ref=e105]:
+            - generic [ref=e106]: ISTQB / CTFL
+            - generic [ref=e107]: IBQTS / IIST / QAI / AXIN
+          - generic [ref=e108]: Certificação é um ponto de partida, não um destino.
+        - generic [ref=e109]:
+          - button "↓ Anterior" [disabled]
+          - button "Próximo ↑" [ref=e110] [cursor=pointer]
+  - generic [ref=e79]:
+    - button "↓" [disabled]
+    - generic [ref=e81]: 1. Competências
+    - button "↑" [ref=e82] [cursor=pointer]

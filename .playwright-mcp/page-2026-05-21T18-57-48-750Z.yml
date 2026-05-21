@@ -1,0 +1,101 @@
+- generic [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - generic [ref=e4]:
+        - text: Roadmap QE
+        - emphasis [ref=e5]: "&"
+        - text: IA
+      - generic [ref=e6]: por Fábio Araújo
+    - generic [ref=e10]: 2 de 17 blocos explorados
+    - generic [ref=e11]: 02 / 17
+  - main [ref=e12]:
+    - generic [ref=e13]:
+      - generic [ref=e14]:
+        - generic [ref=e15]:
+          - generic [ref=e28]:
+            - generic: Inicie sua jornada
+            - generic: ↑ pressione Próximo para avançar
+          - generic [ref=e31] [cursor=pointer]:
+            - generic: 1. Competências
+            - generic: bloco 01
+          - generic [ref=e34] [cursor=pointer]:
+            - generic: 2. Essenciais
+            - generic: bloco 02
+          - generic [ref=e37] [cursor=pointer]:
+            - generic: 3. Fundamentos de Qualidade
+            - generic: bloco 03
+          - generic [ref=e40] [cursor=pointer]:
+            - generic: 4. Gerenciamento de Testes
+            - generic: bloco 04
+          - generic [ref=e43] [cursor=pointer]:
+            - generic: 5. Negócio e Produto
+            - generic: bloco 05
+          - generic [ref=e46] [cursor=pointer]:
+            - generic: 6. Metodologias
+            - generic: bloco 06
+          - generic [ref=e49] [cursor=pointer]:
+            - generic: 7. Testes de API
+            - generic: bloco 07
+          - generic [ref=e52] [cursor=pointer]:
+            - generic: 8. Testes Web
+            - generic: bloco 08
+          - generic [ref=e55] [cursor=pointer]:
+            - generic: 9. Testes Mobile
+            - generic: bloco 09
+          - generic [ref=e58] [cursor=pointer]:
+            - generic: 10. Modernização de Legados
+            - generic: bloco 10
+          - generic [ref=e61] [cursor=pointer]:
+            - generic: 11. Automação de Testes
+            - generic: bloco 11
+          - generic [ref=e64] [cursor=pointer]:
+            - generic: 12. DevOps e Pipeline
+            - generic: bloco 12
+          - generic [ref=e67] [cursor=pointer]:
+            - generic: 13. Linguagem de Programação
+            - generic: bloco 13
+          - generic [ref=e70] [cursor=pointer]:
+            - generic: 14. Dados
+            - generic: bloco 14
+          - generic [ref=e73] [cursor=pointer]:
+            - generic: 15. Testes Não Funcionais
+            - generic: bloco 15
+          - generic [ref=e76] [cursor=pointer]:
+            - generic: 16. Inteligência Artificial
+            - generic: bloco 16
+          - generic [ref=e79] [cursor=pointer]:
+            - generic: 17. Análise de Código
+            - generic: bloco 17
+          - generic [ref=e82] [cursor=pointer]:
+            - generic: Ao infinito e além...
+        - generic:
+          - img
+      - generic [ref=e99]:
+        - generic [ref=e100]:
+          - generic [ref=e101]: 02 / 17
+          - generic [ref=e102]: 2. Essenciais
+        - generic [ref=e103]:
+          - paragraph [ref=e169]: Nada muda aqui! Todo QE precisa dominar o básico antes de qualquer coisa. O QE que domina o DevTools resolve metade dos problemas sem abrir o código.
+          - generic [ref=e170]: Sistemas e Terminal
+          - generic [ref=e171]:
+            - generic [ref=e172]: Linux / Unix / macOS / Windows
+            - generic [ref=e173]: Bash, PowerShell, Cmder
+            - generic [ref=e174]: "Comandos: grep, curl, ssh, pipes"
+          - generic [ref=e175]: Browser e Web
+          - generic [ref=e176]:
+            - generic [ref=e177]: "DevTools: Console, Network, Application"
+            - generic [ref=e178]: DOM, HTML, CSS, XPath
+            - generic [ref=e179]: Seletores CSS e XPath para automação
+          - generic [ref=e180]: Produtividade
+          - generic [ref=e181]:
+            - generic [ref=e182]: Git, GitHub / GitLab, PRs
+            - generic [ref=e183]: VS Code
+            - generic [ref=e184]: Office, Notion, Confluence, Miro
+          - generic [ref=e185]: Abrindo o DevTools Network você identifica um payload com campo vazio em produção, sem tocar no código.
+        - generic [ref=e124]:
+          - button "↓ Anterior" [ref=e147] [cursor=pointer]
+          - button "Próximo ↑" [ref=e125] [cursor=pointer]
+  - generic [ref=e126]:
+    - button "↓" [ref=e148] [cursor=pointer]
+    - generic [ref=e127]: 2. Essenciais
+    - button "↑" [active] [ref=e128] [cursor=pointer]

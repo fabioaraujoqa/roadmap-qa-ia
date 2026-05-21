@@ -1,0 +1,89 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e3]:
+    - generic [ref=e4]: Fábio Araújo
+    - heading "Roadmap Engenharia de Qualidade & IA" [level=1] [ref=e5]:
+      - text: Roadmap
+      - emphasis [ref=e6]: Engenharia de Qualidade
+      - text: "& IA"
+    - paragraph [ref=e7]: 17 blocos de conhecimento. Uma jornada pelo universo da qualidade de software, do básico ao avançado, incluindo IA, agentes e MCP.
+    - button "Iniciar jornada" [ref=e8] [cursor=pointer]
+    - paragraph [ref=e9]: setas ↑ ↓ para navegar, clique nos pontos, ESC fecha painel
+  - banner [ref=e10]:
+    - generic [ref=e11]:
+      - generic [ref=e12]:
+        - text: Roadmap QE
+        - emphasis [ref=e13]: "&"
+        - text: IA
+      - generic [ref=e14]: por Fábio Araújo
+    - generic [ref=e17]: 0 de 17 blocos explorados
+    - generic [ref=e18]: — / 17
+  - main [ref=e19]:
+    - generic [ref=e20]:
+      - generic [ref=e21]:
+        - generic [ref=e22]:
+          - generic: Inicie sua jornada
+        - generic [ref=e25] [cursor=pointer]:
+          - generic: 1. Competências
+          - generic: bloco 01
+        - generic [ref=e28] [cursor=pointer]:
+          - generic: 2. Essenciais
+          - generic: bloco 02
+        - generic [ref=e31] [cursor=pointer]:
+          - generic: 3. Fundamentos de Qualidade
+          - generic: bloco 03
+        - generic [ref=e34] [cursor=pointer]:
+          - generic: 4. Gerenciamento de Testes
+          - generic: bloco 04
+        - generic [ref=e37] [cursor=pointer]:
+          - generic: 5. Negócio e Produto
+          - generic: bloco 05
+        - generic [ref=e40] [cursor=pointer]:
+          - generic: 6. Metodologias
+          - generic: bloco 06
+        - generic [ref=e43] [cursor=pointer]:
+          - generic: 7. Testes de API
+          - generic: bloco 07
+        - generic [ref=e46] [cursor=pointer]:
+          - generic: 8. Testes Web
+          - generic: bloco 08
+        - generic [ref=e49] [cursor=pointer]:
+          - generic: 9. Testes Mobile
+          - generic: bloco 09
+        - generic [ref=e52] [cursor=pointer]:
+          - generic: 10. Modernização de Legados
+          - generic: bloco 10
+        - generic [ref=e55] [cursor=pointer]:
+          - generic: 11. Automação de Testes
+          - generic: bloco 11
+        - generic [ref=e58] [cursor=pointer]:
+          - generic: 12. DevOps e Pipeline
+          - generic: bloco 12
+        - generic [ref=e61] [cursor=pointer]:
+          - generic: 13. Linguagem de Programação
+          - generic: bloco 13
+        - generic [ref=e64] [cursor=pointer]:
+          - generic: 14. Dados
+          - generic: bloco 14
+        - generic [ref=e67] [cursor=pointer]:
+          - generic: 15. Testes Não Funcionais
+          - generic: bloco 15
+        - generic [ref=e70] [cursor=pointer]:
+          - generic: 16. Inteligência Artificial
+          - generic: bloco 16
+        - generic [ref=e73] [cursor=pointer]:
+          - generic: 17. Análise de Código
+          - generic: bloco 17
+        - generic [ref=e76] [cursor=pointer]:
+          - generic: Ao infinito e além...
+      - generic:
+        - img
+    - generic:
+      - generic:
+        - generic: 01 / 17
+      - generic:
+        - button "↓ Anterior"
+        - button "Próximo ↑"
+  - generic [ref=e78]:
+    - button "↓" [ref=e79] [cursor=pointer]
+    - generic [ref=e80]: —
+    - button "↑" [ref=e81] [cursor=pointer]
