@@ -23,6 +23,7 @@ body {
   color: var(--text);
   font-family: 'Inter', system-ui, sans-serif;
   height: 100vh;
+  height: 100dvh;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -42,7 +43,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 12px 22px;
+  padding: max(12px, env(safe-area-inset-top)) 22px 12px;
   border-bottom: 1px solid var(--border);
   background: rgba(6, 8, 15, 0.93);
   backdrop-filter: blur(12px);
@@ -589,7 +590,7 @@ main {
 #bottom {
   position: relative;
   z-index: 10;
-  padding: 10px 22px;
+  padding: 10px 22px max(10px, env(safe-area-inset-bottom));
   border-top: 1px solid var(--border);
   background: rgba(6, 8, 15, 0.93);
   backdrop-filter: blur(12px);
@@ -705,8 +706,9 @@ main {
   }
 
   #panel.hidden { max-height: 0; opacity: 0; pointer-events: none; }
-  #panel.peek { max-height: 36px !important; overflow: hidden; }
-  #conclusion { max-height: 62vh; }
+  #panel.peek { max-height: calc(36px + env(safe-area-inset-bottom, 0px)) !important; overflow: hidden; }
+  #panel .pscroll { padding-bottom: env(safe-area-inset-bottom, 0px); }
+  #conclusion { max-height: 62vh; padding-bottom: env(safe-area-inset-bottom, 0px); }
   #prog-wrap { display: none; }
   #vline { left: 80px; }
   .ndot { left: 80px; }
