@@ -681,6 +681,8 @@ main {
 }
 
 .nbtn {
+  flex: 0 0 auto;
+  min-width: 168px;
   padding: 10px 22px;
   border: 1px solid var(--border);
   background: transparent;
@@ -699,14 +701,6 @@ main {
 .nbtn.pr.lil { background: var(--lilac); border-color: var(--lilac); }
 .nbtn.pr.lil:hover { background: #a855f7; }
 .nbtn:disabled { opacity: 0.2; cursor: not-allowed; pointer-events: none; }
-
-#tbar {
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--text);
-  min-width: 240px;
-  text-align: center;
-}
 
 /* INTRO */
 #intro {
@@ -801,4 +795,6 @@ main {
   #track-center { --axis: 80px; }
   #rkt { left: 46px; }
   .panel-handle { display: block; }
+  #bottom { justify-content: space-between; }
+  #bottom .nbtn { flex: 1; min-width: 0; }
 }

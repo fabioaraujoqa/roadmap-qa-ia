@@ -76,9 +76,8 @@
   </div>
 </main>
 <div id="bottom">
-  <button class="nbtn" id="bbprev" onclick="go(-1)">↓</button>
-  <div id="tbar">—</div>
-  <button class="nbtn pr" id="bbnext" onclick="go(1)">↑</button>
+  <button class="nbtn" id="bbprev" onclick="go(-1)">VOLTAR ↓</button>
+  <button class="nbtn pr" id="bbnext" onclick="go(1)">AVANÇAR ↑</button>
 </div>
 <script>
 const LILAC_IDS=[2,5,8,11,14,17];
@@ -434,7 +433,6 @@ function updateUI(i){
   document.getElementById('prog-fill').style.width=pct+'%';
   document.getElementById('prog-lbl').textContent=`${i+1} de 17 blocos explorados`;
   document.getElementById('counter').textContent=String(i+1).padStart(2,'0')+' / 17';
-  document.getElementById('tbar').textContent=D[i].t;
   document.getElementById('bbprev').disabled=i===0;
   const bb=document.getElementById('bbnext');
   bb.className='nbtn pr'+(isL?' lil':'');
@@ -448,7 +446,6 @@ function showConclusion(){
   document.getElementById('prog-fill').style.width='100%';
   document.getElementById('prog-lbl').textContent='Jornada completa!';
   document.getElementById('counter').textContent='17 / 17';
-  document.getElementById('tbar').textContent='Ao infinito e além...';
   document.getElementById('bbprev').disabled=false;
   document.getElementById('bbprev').onclick=()=>{document.getElementById('conclusion').classList.remove('show');sel(D.length-1)};
   document.getElementById('bbnext').disabled=true;
