@@ -15,7 +15,7 @@ Mapa interativo com 17 blocos de conhecimento para quem quer evoluir na carreira
 3. Clique em qualquer ponto da linha do tempo para ir direto a um tópico
 4. No final, você encontra o artigo completo no Medium e pode recomeçar a jornada
 
-**No celular:** arraste o painel de conteúdo para baixo para ver o mapa completo.
+**No celular:** Clique no botão AVANÇAR para ir para o próximo bloco, e VOLTAR para retornar ao bloco anterior.
 
 ---
 
@@ -43,12 +43,20 @@ Mapa interativo com 17 blocos de conhecimento para quem quer evoluir na carreira
 
 ---
 
+## Uso de IA
+Aproveitando o conhecimento de IA para criar um roadmap interativo, com navegação fluida e conteúdo atualizado, focado nas necessidades atuais do mercado de qualidade de software. 
+Neste projeto usei Copilot (Claude AI - Sonnet e GPT-4) para gerar o conteúdo, estruturar o roadmap e criar a interface.
+
+---
+
 ## Sobre
 
 Criado por **Fábio Araújo**, Especialista em Qualidade, Professor e Mentor.
 Para mentorias em grupo ou individuais, entre em contato: https://mentoria-diganostico.netlify.app/
 
-Redes sociais:
+---
+
+## Siga-me nas redes sociais
 - [Medium](https://fabiokaia25.medium.com)
 - [GitHub](https://github.com/fabioaraujoqa)
 - [LinkedIn](https://www.linkedin.com/in/fabio10/)
