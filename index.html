@@ -434,6 +434,7 @@ function updateUI(i){
   document.getElementById('prog-lbl').textContent=`${i+1} de 17 blocos explorados`;
   document.getElementById('counter').textContent=String(i+1).padStart(2,'0')+' / 17';
   document.getElementById('bbprev').disabled=i===0;
+  document.getElementById('bbprev').onclick=()=>go(-1);
   const bb=document.getElementById('bbnext');
   bb.className='nbtn pr'+(isL?' lil':'');
   if(i===D.length-1){bb.onclick=showConclusion;bb.disabled=false}

@@ -3,4 +3,4 @@
 *.jpg
 node_modules/
 .claude/
-.playwright-mcp
+.playwright-mcp/
