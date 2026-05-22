@@ -12,14 +12,15 @@
 <div id="intro">
   <div class="ibox">
     <div class="iey">Fábio Araújo</div>
-    <h1 class="ih1">Roadmap <em>Engenharia de Qualidade</em> & IA</h1>
+    <h1 class="ih1">Roadmap <em>Engenharia de Qualidade</em> & <span class="ia-highlight">IA</span></h1>
     <p class="ip">17 blocos de conhecimento. Uma jornada pelo universo da qualidade de software, do básico ao avançado, incluindo IA, agentes e MCP.</p>
     <button class="icta" onclick="launch()">Iniciar jornada</button>
-    <p class="ihint">setas ↑ ↓ para navegar, clique nos pontos, ESC fecha painel</p>
+    <p class="ihint">setas ↑ ↓ para navegar, clique nos pontos</p>
+    <p class="ihint">ESC fecha painel</p>
   </div>
 </div>
 <header>
-  <div><div class="logo">Roadmap QE <em>&</em> IA</div><div class="by">por Fábio Araújo</div></div>
+  <div><div class="logo">ROADMAP - QE <em>&<span class="ia-highlight"> IA</div><div class="by">por Fábio Araújo</div></div>
   <div id="prog-wrap"><div id="prog-bg"><div id="prog-fill"></div></div><div id="prog-lbl">0 de 17 blocos explorados</div></div>
   <div id="counter">— / 17</div>
 </header>
@@ -309,7 +310,7 @@ function buildTrack(){
   const launchLb=document.createElement('div');launchLb.className='nlabel';launchLb.textContent='Inicie sua jornada';
   launchLb.style.cssText='color:var(--accent);font-weight:600;font-size:13px';
   const launchHint=document.createElement('div');launchHint.className='nhint';
-  launchHint.textContent='↑ pressione Próximo para avançar';
+  launchHint.textContent='↑ pressione seta pra cima';
   launchSeg.appendChild(launchDot);launchSeg.appendChild(launchLb);launchSeg.appendChild(launchHint);
   tr.appendChild(launchSeg);
 
